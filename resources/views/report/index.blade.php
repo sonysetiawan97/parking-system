@@ -67,6 +67,12 @@
     </table>
   </div>
 </div>
+
+<div class="row">
+<div class="col d-flex justify-content-center m-3">
+    {{ $tableEntries->links() }}
+  </div>
+</div>
 @endsection
 
 <script>

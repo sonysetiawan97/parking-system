@@ -30,7 +30,7 @@ class ReportController extends Controller
             $entries = $entries->where('time_in', '<=', date('Y-m-d', strtotime($endDate . ' + 1 day')));
         }
 
-        $entries = $entries->get();
+        $entries = $entries->paginate(10);
 
 
         $data = [

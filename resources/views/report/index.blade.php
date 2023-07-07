@@ -20,11 +20,11 @@
       <div class="row">
         <div class="col mb-3">
           <label for="start_date" class="form-label">Tanggal Mulai:</label>
-          <input type="date" class="form-control" id="start_date" name="start_date" value="{{ $params['start_date'] }}">
+          <input type="date" class="form-control" id="start_date" name="start_date" value="{{ isset($params['start_date']) ? $params['start_date'] : '' }}">
         </div>
         <div class="col mb-3">
           <label for="end_date" class="form-label">Tanggal Berakhir:</label>
-          <input type="date" class="form-control" id="end_date" name="end_date" value="{{ $params['end_date'] }}">
+          <input type="date" class="form-control" id="end_date" name="end_date" value="{{ isset($params['end_date']) ? $params['end_date'] : '' }}">
         </div>
         <div class="col align-self-center">
           <button type="submit" class="btn btn-primary">Submit</button>
@@ -38,8 +38,8 @@
   <div class="col d-flex justify-content-end m-3">
     <form method="GET" action="{{ route('report_export') }}">
       @csrf
-      <input type="hidden" class="form-control" id="start_date_report" name="start_date" value="{{ $params['start_date'] }}">
-      <input type="hidden" class="form-control" id="end_date_report" name="end_date" value="{{ $params['end_date'] }}">
+      <input type="hidden" class="form-control" id="start_date_report" name="start_date" value="{{ isset($params['start_date']) ? $params['start_date'] : '' }}">
+      <input type="hidden" class="form-control" id="end_date_report" name="end_date" value="{{ isset($params['end_date']) ? $params['end_date'] : '' }}">
       <button type="submit" class="btn btn-primary">Export</button>
     </form>
   </div>
